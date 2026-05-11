@@ -1,121 +1,222 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import { Flame, Eye, Skull, Clock, MapPin, CreditCard, Wallet, Shield, ShieldAlert, ChevronRight } from 'lucide-react';
+import Layout from "../layouts/Layout.astro";
+import {
+  Flame,
+  Eye,
+  Skull,
+  Clock,
+  MapPin,
+  CreditCard,
+  Wallet,
+  ShieldAlert,
+  ChevronRight,
+} from "lucide-react";
 
 const WA_NUMBER = "5511999999999"; // Substitua pelo número real
-const WA_MESSAGE = "Salve! Tenho interesse em agendar uma leitura de Tarot.";
+const WA_MESSAGE = "Laroyê! Tenho interesse em agendar uma leitura de Tarot.";
 const WA_URL = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(WA_MESSAGE)}`;
+
+// Símbolos Místicos (SVGs)
+const PentagramSVG = `<svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="0.3" class="w-full h-full"><path d="M50,5 L81,87 L2,35 L98,35 L19,87 Z" /></svg>`;
+const TridentSVG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M5 6v6a1 1 0 0 0 1 1h5"/><path d="M12 22V3"/><path d="M12 3l-2 3"/><path d="M12 3l2 3"/><path d="M19 6v6a1 1 0 0 1-1 1h-5"/></svg>`;
 ---
 
-<Layout title="Tarólogo Espiritual | Oculto e Fundamento">
-  
+<Layout title="Tarólogo Espiritual | Quimbanda e Fundamento">
   {/* Header Flutuante */}
-  <header class="absolute top-0 w-full p-6 flex justify-between items-center z-50">
-    <div class="text-dourado font-serif text-2xl font-bold tracking-widest uppercase">
+  <header
+    class="absolute top-0 w-full p-6 flex justify-between items-center z-50"
+  >
+    <div
+      class="text-sangue flex items-center gap-3 font-serif text-2xl font-bold tracking-widest uppercase drop-shadow-md"
+    >
+      <div class="w-5 h-5 opacity-80" set:html={TridentSVG} />
       Oráculo
     </div>
-    <a 
-      href={WA_URL} 
-      target="_blank" 
+    <a
+      href={WA_URL}
+      target="_blank"
       rel="noopener noreferrer"
-      class="hidden md:flex items-center gap-2 text-sm font-medium hover:text-dourado transition-colors uppercase tracking-widest"
+      class="hidden md:flex items-center gap-2 text-sm font-medium hover:text-sangue transition-colors uppercase tracking-widest text-offwhite/80"
     >
       Consultar
     </a>
   </header>
 
   {/* Hero Section */}
-  <section class="relative min-h-screen flex items-center justify-center overflow-hidden px-6 pt-20 bg-black">
-    {/* Fundo Decorativo - Sombra e Contraste */}
-    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-dourado/10 via-black to-black pointer-events-none"></div>
+  <section
+    class="relative min-h-screen flex items-center justify-center overflow-hidden px-6 pt-20 bg-black"
+  >
+    {/* Pentagrama de Fundo (Imagem Local) */}
+    <div class="absolute inset-0 flex items-center justify-center opacity-[0.15] pointer-events-none scale-150 md:scale-125">
+      <div 
+        class="w-[800px] h-[800px] bg-center bg-no-repeat bg-contain animate-[spin_120s_linear_infinite]" 
+        style="background-image: url('/pentragrama.png');"
+      ></div>
+    </div>
+
+    {/* Fundo Decorativo - Névoa Vermelha e Preta */}
+    <div
+      class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-sangue/15 via-black/80 to-black pointer-events-none"
+    ></div>
 
     <div class="max-w-4xl mx-auto text-center relative z-10 space-y-8 mt-12">
-      <div class="inline-flex items-center gap-2 px-3 py-1 border-b border-dourado/50 text-dourado text-xs font-bold uppercase tracking-[0.2em]">
-        <Flame size={14} class="text-dourado" />
-        <span>Sem Rodeios. Apenas a Verdade.</span>
+      <div
+        class="inline-flex items-center gap-2 px-3 py-1 border-b border-sangue/50 text-sangue text-xs font-bold uppercase tracking-[0.2em]"
+      >
+        <Flame size={14} class="text-sangue" />
+        <span>A encruzilhada dos seus caminhos</span>
       </div>
-      
-      <h1 class="font-serif text-5xl md:text-7xl font-bold text-offwhite leading-tight uppercase tracking-tight">
-        Respostas <span class="text-dourado">Diretas.</span><br/> Caminhos <span class="text-dourado">Abertos.</span>
-      </h1>
-      
-      <p class="text-lg md:text-xl text-offwhite/70 max-w-2xl mx-auto font-light leading-relaxed">
-        Consultas objetivas com o Tarot, fundamentadas na força e disciplina da Umbanda. O que está oculto será revelado.
-      </p>
-      
-      <div class="pt-8">
-        <a 
-          href={WA_URL}
-          target="_blank" 
-          rel="noopener noreferrer"
-          class="inline-flex items-center gap-3 bg-dourado text-black hover:bg-white font-bold uppercase tracking-widest text-sm px-8 py-5 rounded-sm transition-all transform shadow-2xl shadow-dourado/10"
+
+      <h1
+        class="font-serif text-5xl md:text-7xl font-bold text-offwhite leading-tight uppercase tracking-tight"
+      >
+        Respostas <span class="text-sangue">Diretas.</span><br /> Destinos <span
+          class="text-sangue">Cruzados.</span
         >
-          {/* Ícone Genérico de Ação para manter a estética magica/direta */}
-          <Eye size={20} strokeWidth={2.5} />
-          Desvendar Caminhos
+      </h1>
+
+      <p
+        class="text-lg md:text-xl text-offwhite/60 max-w-2xl mx-auto font-light leading-relaxed"
+      >
+        Consultas oraculares fundamentadas na força, na disciplina e no mistério da Quimbanda. O véu será rompido.
+      </p>
+
+      <div class="pt-8">
+        <a
+          href={WA_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-3 bg-sangue text-offwhite hover:bg-black hover:text-sangue border border-sangue font-bold uppercase tracking-widest text-sm px-8 py-5 rounded-sm transition-all transform shadow-2xl shadow-sangue/20 group"
+        >
+          <div class="w-5 h-5 group-hover:scale-110 transition-transform" set:html={TridentSVG} />
+          Evocar o Oráculo
         </a>
-        <p class="mt-6 text-[10px] text-offwhite/40 font-light uppercase tracking-[0.3em]">Atendimentos Online e Presenciais</p>
+        <p
+          class="mt-6 text-[10px] text-offwhite/30 font-light uppercase tracking-[0.3em]"
+        >
+          Trabalho Sério • Sigilo Absoluto
+        </p>
       </div>
     </div>
   </section>
 
+  {/* Divisor Místico */}
+  <div class="w-full flex justify-center bg-black py-4 border-y border-white/5">
+    <div class="w-8 h-8 text-sangue/30" set:html={PentagramSVG} />
+  </div>
+
   {/* Sobre as Consultas */}
-  <section class="py-24 px-6 bg-[#0a0a0a] border-y border-white/5 relative">
+  <section class="py-24 px-6 bg-[#050505] relative">
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-16 space-y-4">
-        <h2 class="font-serif text-3xl md:text-5xl font-bold text-offwhite uppercase tracking-wide">As Lâminas e o Propósito</h2>
+        <h2
+          class="font-serif text-3xl md:text-5xl font-bold text-offwhite uppercase tracking-wide"
+        >
+          As Lâminas e o Propósito
+        </h2>
         <p class="text-offwhite/50 max-w-2xl mx-auto text-lg font-light">
-          O Tarot não é brincadeira. Escolha a sua leitura com intenção e prepare-se para o que o oráculo tem a dizer.
+          O Tarot não é um jogo de sorte, é leitura de destino. Escolha sua tiragem com intenção e firmeza.
         </p>
-        <div class="flex justify-center gap-6 text-xs uppercase tracking-widest text-offwhite/40 pt-4">
-          <div class="flex items-center gap-2"><MapPin size={14} class="text-dourado" /> Presencial (SP)</div>
-          <div class="flex items-center gap-2"><Eye size={14} class="text-dourado" /> Online (Ao Vivo)</div>
+        <div
+          class="flex justify-center gap-6 text-xs uppercase tracking-widest text-offwhite/40 pt-4"
+        >
+          <div class="flex items-center gap-2">
+            <MapPin size={14} class="text-sangue" /> Presencial (SP)
+          </div>
+          <div class="flex items-center gap-2">
+            <Eye size={14} class="text-sangue" /> Online (Vídeo)
+          </div>
         </div>
       </div>
 
       <div class="grid md:grid-cols-3 gap-6">
         {/* Card 1 */}
-        <div class="bg-black border border-white/10 p-8 hover:border-dourado/50 transition-colors group">
-          <div class="mb-6 text-dourado/50 group-hover:text-dourado transition-colors">
+        <div
+          class="bg-black border border-white/5 p-8 hover:border-sangue/50 transition-colors group relative overflow-hidden"
+        >
+          <div class="absolute -bottom-10 -right-10 w-40 h-40 text-white/[0.02] group-hover:text-sangue/[0.05] transition-colors pointer-events-none" set:html={PentagramSVG} />
+          <div
+            class="mb-6 text-offwhite/20 group-hover:text-sangue transition-colors"
+          >
             <Flame size={32} strokeWidth={1.5} />
           </div>
-          <h3 class="font-serif text-xl font-bold uppercase tracking-wider mb-3">Leitura Objetiva</h3>
-          <p class="text-offwhite/60 font-light leading-relaxed mb-6 text-sm">
-            Perguntas diretas, respostas claras. Ideal para resolver dúvidas urgentes, tomar decisões rápidas e entender a situação atual sem enrolação.
+          <h3
+            class="font-serif text-xl font-bold uppercase tracking-wider mb-3 text-offwhite"
+          >
+            Fogo Cruzado (Objetiva)
+          </h3>
+          <p class="text-offwhite/50 font-light leading-relaxed mb-6 text-sm">
+            Perguntas diretas, respostas claras. Ideal para resolver dúvidas urgentes e desatar nós de situações imediatas. Sem enrolação.
           </p>
-          <ul class="text-xs uppercase tracking-widest text-offwhite/50 space-y-3">
-            <li class="flex items-center gap-2"><ChevronRight size={14} class="text-dourado"/> Fatos concretos</li>
-            <li class="flex items-center gap-2"><ChevronRight size={14} class="text-dourado"/> Decisões iminentes</li>
+          <ul
+            class="text-xs uppercase tracking-widest text-offwhite/40 space-y-3"
+          >
+            <li class="flex items-center gap-2">
+              <ChevronRight size={14} class="text-sangue" /> Fatos concretos
+            </li>
+            <li class="flex items-center gap-2">
+              <ChevronRight size={14} class="text-sangue" /> Decisões iminentes
+            </li>
           </ul>
         </div>
 
         {/* Card 2 */}
-        <div class="bg-black border border-dourado/30 relative p-8 hover:border-dourado transition-colors group shadow-lg shadow-dourado/5">
-          <div class="mb-6 text-dourado transition-transform group-hover:scale-110">
+        <div
+          class="bg-[#0a0a0a] border border-sangue/30 relative p-8 hover:border-sangue transition-colors group shadow-lg shadow-sangue/5 overflow-hidden"
+        >
+          <div class="absolute -bottom-10 -right-10 w-40 h-40 text-white/[0.02] group-hover:text-sangue/[0.05] transition-colors pointer-events-none" set:html={PentagramSVG} />
+          <div
+            class="mb-6 text-sangue transition-transform group-hover:scale-110"
+          >
             <Eye size={32} strokeWidth={1.5} />
           </div>
-          <h3 class="font-serif text-xl font-bold uppercase tracking-wider mb-3">Mesa Real (Panorama)</h3>
-          <p class="text-offwhite/60 font-light leading-relaxed mb-6 text-sm">
-            Análise profunda e irrestrita da sua vida. Entenda as influências espirituais, os bloqueios materiais e os caminhos que estão abertos para você.
+          <h3
+            class="font-serif text-xl font-bold uppercase tracking-wider mb-3 text-offwhite"
+          >
+            Mesa Real (Panorama)
+          </h3>
+          <p class="text-offwhite/50 font-light leading-relaxed mb-6 text-sm">
+            Varredura completa. Identifica influências espirituais, demandas feiticeiras, bloqueios materiais e os caminhos abertos.
           </p>
-          <ul class="text-xs uppercase tracking-widest text-offwhite/50 space-y-3">
-            <li class="flex items-center gap-2"><ChevronRight size={14} class="text-dourado"/> Trabalho & Dinheiro</li>
-            <li class="flex items-center gap-2"><ChevronRight size={14} class="text-dourado"/> Magia & Proteção</li>
+          <ul
+            class="text-xs uppercase tracking-widest text-offwhite/40 space-y-3"
+          >
+            <li class="flex items-center gap-2">
+              <ChevronRight size={14} class="text-sangue" /> Trabalho & Dinheiro
+            </li>
+            <li class="flex items-center gap-2">
+              <ChevronRight size={14} class="text-sangue" /> Magia & Proteção
+            </li>
           </ul>
         </div>
 
         {/* Card 3 */}
-        <div class="bg-black border border-white/10 p-8 hover:border-dourado/50 transition-colors group">
-          <div class="mb-6 text-dourado/50 group-hover:text-dourado transition-colors">
+        <div
+          class="bg-black border border-white/5 p-8 hover:border-sangue/50 transition-colors group relative overflow-hidden"
+        >
+          <div class="absolute -bottom-10 -right-10 w-40 h-40 text-white/[0.02] group-hover:text-sangue/[0.05] transition-colors pointer-events-none" set:html={PentagramSVG} />
+          <div
+            class="mb-6 text-offwhite/20 group-hover:text-sangue transition-colors"
+          >
             <Skull size={32} strokeWidth={1.5} />
           </div>
-          <h3 class="font-serif text-xl font-bold uppercase tracking-wider mb-3">Cruzamento de Destinos</h3>
-          <p class="text-offwhite/60 font-light leading-relaxed mb-6 text-sm">
-            A verdade nua e crua sobre suas conexões. Intenções ocultas, afinidades reais e o que esperar do futuro de qualquer relacionamento.
+          <h3
+            class="font-serif text-xl font-bold uppercase tracking-wider mb-3 text-offwhite"
+          >
+            Encruzilhada (Relações)
+          </h3>
+          <p class="text-offwhite/50 font-light leading-relaxed mb-6 text-sm">
+            A verdade nua e crua sobre conexões. Intenções ocultas, afinidades reais e o que esperar do futuro de qualquer vínculo.
           </p>
-          <ul class="text-xs uppercase tracking-widest text-offwhite/50 space-y-3">
-            <li class="flex items-center gap-2"><ChevronRight size={14} class="text-dourado"/> Intenções Ocultas</li>
-            <li class="flex items-center gap-2"><ChevronRight size={14} class="text-dourado"/> Desfechos Prováveis</li>
+          <ul
+            class="text-xs uppercase tracking-widest text-offwhite/40 space-y-3"
+          >
+            <li class="flex items-center gap-2">
+              <ChevronRight size={14} class="text-sangue" /> Intenções Ocultas
+            </li>
+            <li class="flex items-center gap-2">
+              <ChevronRight size={14} class="text-sangue" /> Desfechos Prováveis
+            </li>
           </ul>
         </div>
       </div>
@@ -123,98 +224,161 @@ const WA_URL = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(WA_MESSAGE)
   </section>
 
   {/* Consultas e Preços */}
-  <section class="py-24 px-6 relative bg-black">
+  <section class="py-24 px-6 relative bg-black border-t border-white/5">
     <div class="max-w-4xl mx-auto">
       <div class="text-center mb-16">
-        <h2 class="font-serif text-3xl md:text-5xl font-bold text-offwhite mb-4 uppercase tracking-wide">Consultas</h2>
-        <p class="text-offwhite/50 font-light text-sm uppercase tracking-widest">Escolha seu formato de atendimento</p>
+        <h2
+          class="font-serif text-3xl md:text-5xl font-bold text-offwhite mb-4 uppercase tracking-wide"
+        >
+          Tributo
+        </h2>
+        <p
+          class="text-offwhite/50 font-light text-sm uppercase tracking-widest"
+        >
+          O preço do conhecimento e da abertura
+        </p>
       </div>
 
-      <div class="border border-white/10 bg-[#0a0a0a]">
-        <div class="grid divide-y divide-white/10">
-          
-          <div class="flex flex-col md:flex-row justify-between items-center p-8 hover:bg-white/5 transition-colors">
-            <div class="flex items-center gap-6 mb-4 md:mb-0 text-center md:text-left">
-              <div class="text-dourado/50 hidden md:block">
+      <div class="border border-white/5 bg-[#050505]">
+        <div class="grid divide-y divide-white/5">
+          <div
+            class="flex flex-col md:flex-row justify-between items-center p-8 hover:bg-white/5 transition-colors"
+          >
+            <div
+              class="flex items-center gap-6 mb-4 md:mb-0 text-center md:text-left"
+            >
+              <div class="text-sangue/50 hidden md:block">
                 <Clock size={24} strokeWidth={1.5} />
               </div>
               <div>
-                <h4 class="text-lg font-bold uppercase tracking-wider text-offwhite">Leitura Focada (1 a 2 Temas)</h4>
-                <p class="text-xs text-offwhite/40 mt-1 uppercase tracking-widest">Duração: ~30 minutos</p>
+                <h4
+                  class="text-lg font-bold uppercase tracking-wider text-offwhite"
+                >
+                  Leitura Focada (1 a 2 Temas)
+                </h4>
+                <p
+                  class="text-xs text-offwhite/40 mt-1 uppercase tracking-widest"
+                >
+                  Duração: ~30 minutos
+                </p>
               </div>
             </div>
-            <div class="text-2xl font-serif font-bold text-dourado">R$ 80</div>
+            <div class="text-2xl font-serif font-bold text-sangue">R$ 80</div>
           </div>
 
-          <div class="flex flex-col md:flex-row justify-between items-center p-8 hover:bg-white/5 transition-colors border-l-4 border-l-dourado bg-white/5 md:bg-transparent">
-            <div class="flex items-center gap-6 mb-4 md:mb-0 text-center md:text-left">
-              <div class="text-dourado hidden md:block">
+          <div
+            class="flex flex-col md:flex-row justify-between items-center p-8 hover:bg-white/5 transition-colors border-l-4 border-l-sangue bg-white/[0.02] md:bg-transparent"
+          >
+            <div
+              class="flex items-center gap-6 mb-4 md:mb-0 text-center md:text-left"
+            >
+              <div class="text-sangue hidden md:block">
                 <Eye size={24} strokeWidth={1.5} />
               </div>
               <div>
-                <h4 class="text-lg font-bold uppercase tracking-wider text-offwhite">Mesa Completa</h4>
-                <p class="text-xs text-offwhite/40 mt-1 uppercase tracking-widest">Duração: ~1 hora • Sem limite de perguntas</p>
+                <h4
+                  class="text-lg font-bold uppercase tracking-wider text-offwhite"
+                >
+                  Mesa Completa
+                </h4>
+                <p
+                  class="text-xs text-offwhite/40 mt-1 uppercase tracking-widest"
+                >
+                  Duração: ~1 hora • Sem limite de perguntas
+                </p>
               </div>
             </div>
-            <div class="text-2xl font-serif font-bold text-dourado">R$ 150</div>
+            <div class="text-2xl font-serif font-bold text-sangue">R$ 100</div>
           </div>
-
         </div>
 
-        <div class="p-6 bg-black border-t border-white/10 flex flex-col md:flex-row justify-center gap-8 text-xs font-bold uppercase tracking-widest text-offwhite/40">
+        <div
+          class="p-6 bg-[#0a0a0a] border-t border-white/5 flex flex-col md:flex-row justify-center gap-8 text-xs font-bold uppercase tracking-widest text-offwhite/30"
+        >
           <div class="flex items-center justify-center gap-2">
-            <CreditCard size={16} class="text-dourado/50" /> Cartão / Link
+            <CreditCard size={16} class="text-sangue/50" /> Cartão / Link
           </div>
           <div class="flex items-center justify-center gap-2">
-            <Wallet size={16} class="text-dourado/50" /> Pix Instantâneo
+            <Wallet size={16} class="text-sangue/50" /> Pix Instantâneo
           </div>
         </div>
       </div>
     </div>
   </section>
 
+  {/* Divisor Místico 2 */}
+  <div class="w-full flex justify-center bg-black py-4 border-y border-white/5">
+    <div class="w-6 h-6 text-sangue/30" set:html={TridentSVG} />
+  </div>
+
   {/* Ética e Fundamento */}
-  <section class="py-20 px-6 bg-[#050505] border-t border-white/5">
+  <section class="py-20 px-6 bg-[#050505]">
     <div class="max-w-3xl mx-auto text-center space-y-6">
       <div class="flex justify-center mb-6">
-        <Shield size={32} class="text-dourado/30" strokeWidth={1.5} />
+        <div class="w-12 h-12 text-sangue/40" set:html={TridentSVG} />
       </div>
-      <h2 class="font-serif text-2xl md:text-3xl font-bold uppercase tracking-wider text-offwhite">A Lei do Retorno</h2>
-      <p class="text-offwhite/60 font-light leading-relaxed text-sm md:text-base">
-        O oráculo mostra a verdade, cabe a você lidar com ela. Meu trabalho é fundamentado na ética, na disciplina e no sigilo absoluto, com total respeito aos Guias. Não digo o que você quer ouvir, digo o que precisa ser dito.
+      <h2
+        class="font-serif text-2xl md:text-3xl font-bold uppercase tracking-wider text-offwhite"
+      >
+        A Lei da Encruzilhada
+      </h2>
+      <p
+        class="text-offwhite/50 font-light leading-relaxed text-sm md:text-base"
+      >
+        O oráculo escancara a verdade, mas o passo a ser dado é apenas seu. Meu trabalho é calcado na firmeza da Quimbanda: ética, disciplina implacável e sigilo absoluto perante os Guardiões. Aqui não há ilusão.
       </p>
-      <div class="inline-flex items-start gap-3 border border-red-900/30 bg-red-950/10 p-4 mt-6 text-left">
-        <ShieldAlert size={18} class="text-red-500/70 shrink-0 mt-0.5" />
-        <p class="text-xs text-offwhite/50 font-light uppercase tracking-widest leading-relaxed">
-          Aviso: Nenhuma promessa de "trabalho infalível" ou feitiçaria. O Tarot traz clareza, mas o livre-arbítrio e as consequências são de sua inteira responsabilidade.
+      <div
+        class="inline-flex items-start gap-3 border border-sangue/30 bg-sangue/5 p-4 mt-6 text-left"
+      >
+        <ShieldAlert size={18} class="text-sangue/80 shrink-0 mt-0.5" />
+        <p
+          class="text-xs text-offwhite/40 font-light uppercase tracking-widest leading-relaxed"
+        >
+          Aviso: O Tarot não substitui tratamento médico ou psicológico. Promessas vazias de feitiçaria não têm espaço aqui. Você é dono do seu livre-arbítrio e de suas consequências.
         </p>
       </div>
     </div>
   </section>
 
   {/* Footer */}
-  <footer class="py-12 px-6 border-t border-white/10 text-center bg-black">
+  <footer class="py-12 px-6 border-t border-white/5 text-center bg-black">
     <div class="max-w-4xl mx-auto flex flex-col items-center gap-6">
-      <div class="text-xl font-serif font-bold text-dourado uppercase tracking-[0.3em]">Oráculo</div>
+      <div
+        class="text-xl font-serif font-bold text-sangue flex items-center gap-3 uppercase tracking-[0.3em]"
+      >
+        <div class="w-4 h-4 opacity-70" set:html={TridentSVG} />
+        Oráculo
+        <div class="w-4 h-4 opacity-70" set:html={TridentSVG} />
+      </div>
       <div class="flex gap-6 mt-2 text-xs font-bold uppercase tracking-widest">
-        <a href="#" class="text-offwhite/30 hover:text-dourado transition-colors">Instagram</a>
-        <a href={WA_URL} target="_blank" rel="noopener noreferrer" class="text-offwhite/30 hover:text-dourado transition-colors">WhatsApp</a>
+        <a
+          href="#"
+          class="text-offwhite/30 hover:text-sangue transition-colors"
+          >Instagram</a
+        >
+        <a
+          href={WA_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-offwhite/30 hover:text-sangue transition-colors"
+          >WhatsApp</a
+        >
       </div>
       <div class="w-12 h-px bg-white/10 my-4"></div>
       <p class="text-[10px] uppercase tracking-[0.2em] text-offwhite/20">
-        &copy; {new Date().getFullYear()} Oráculo Umbanda. Fechado e Firmado.
+        &copy; {new Date().getFullYear()} Oráculo Quimbanda. Laroyê Exu.
       </p>
     </div>
   </footer>
 
   {/* Botão Fixo Simplificado e Elegante */}
-  <a 
-    href={WA_URL} 
-    target="_blank" 
+  <a
+    href={WA_URL}
+    target="_blank"
     rel="noopener noreferrer"
-    class="fixed bottom-6 right-6 bg-dourado text-black p-4 rounded-sm shadow-2xl hover:bg-white transition-all z-50 group flex items-center justify-center border border-black"
+    class="fixed bottom-6 right-6 bg-sangue text-white p-4 rounded-sm shadow-[0_0_20px_rgba(138,3,3,0.4)] hover:bg-black hover:text-sangue border border-transparent hover:border-sangue transition-all z-50 group flex items-center justify-center"
     aria-label="Chamar no WhatsApp"
   >
-    <Eye size={24} strokeWidth={2} />
+    <div class="w-6 h-6" set:html={TridentSVG} />
   </a>
 </Layout>

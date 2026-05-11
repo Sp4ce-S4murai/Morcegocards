@@ -5,10 +5,12 @@
   --color-dourado: #d4af37;
   --color-offwhite: #f5f5f5;
   --color-whatsapp: #25D366;
+  --color-sangue: #8a0303;
+  --color-cobre: #b87333;
   --font-serif: "Playfair Display", serif;
   --font-sans: "Inter", sans-serif;
 }
 
 body {
-  @apply bg-grafite text-offwhite font-sans antialiased;
+  @apply bg-black text-offwhite font-sans antialiased;
 }
