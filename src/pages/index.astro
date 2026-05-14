@@ -13,7 +13,9 @@ import {
 
 const WA_NUMBER = "555493625176";
 const WA_MESSAGE = "Laroyê! Tenho interesse em agendar uma leitura de Tarot.";
-const WA_URL = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(WA_MESSAGE)}`;
+const WA_URL = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(
+  WA_MESSAGE
+)}`;
 
 // Símbolos Místicos (SVGs)
 const PentagramSVG = `<svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="0.3" class="w-full h-full"><path d="M50,5 L81,87 L2,35 L98,35 L19,87 Z" /></svg>`;
@@ -28,7 +30,7 @@ const TridentSVG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
     <div
       class="text-sangue flex items-center gap-3 font-serif text-2xl font-bold tracking-widest uppercase drop-shadow-md"
     >
-      <div class="w-5 h-5 opacity-80" set:html={TridentSVG} />
+      <div class="w-5 h-5 opacity-80" set:html={TridentSVG}></div>
       Oráculo Morcego
     </div>
     <a
@@ -46,17 +48,21 @@ const TridentSVG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
     class="relative min-h-screen flex items-center justify-center overflow-hidden px-6 pt-20 bg-black"
   >
     {/* Pentagrama de Fundo (Imagem Local) */}
-    <div class="absolute inset-0 flex items-center justify-center opacity-[0.15] pointer-events-none scale-150 md:scale-125">
-      <div 
-        class="w-[800px] h-[800px] bg-center bg-no-repeat bg-contain animate-[spin_120s_linear_infinite]" 
+    <div
+      class="absolute inset-0 flex items-center justify-center opacity-[0.15] pointer-events-none scale-150 md:scale-125"
+    >
+      <div
+        class="w-[800px] h-[800px] bg-center bg-no-repeat bg-contain animate-[spin_120s_linear_infinite]"
         style="background-image: url('/pentragrama.png');"
-      ></div>
+      >
+      </div>
     </div>
 
     {/* Fundo Decorativo - Névoa Vermelha e Preta */}
     <div
       class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-sangue/15 via-black/80 to-black pointer-events-none"
-    ></div>
+    >
+    </div>
 
     <div class="max-w-4xl mx-auto text-center relative z-10 space-y-8 mt-12">
       <div
@@ -77,7 +83,8 @@ const TridentSVG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
       <p
         class="text-lg md:text-xl text-offwhite/60 max-w-2xl mx-auto font-light leading-relaxed"
       >
-        Consultas oraculares fundamentadas na força, na disciplina e no mistério da Quimbanda. O véu será rompido.
+        Consultas oraculares fundamentadas na força, na disciplina e no mistério
+        da Quimbanda. O véu será rompido.
       </p>
 
       <div class="pt-8">
@@ -87,7 +94,11 @@ const TridentSVG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
           rel="noopener noreferrer"
           class="inline-flex items-center gap-3 bg-sangue text-offwhite hover:bg-black hover:text-sangue border border-sangue font-bold uppercase tracking-widest text-sm px-8 py-5 rounded-sm transition-all transform shadow-2xl shadow-sangue/20 group"
         >
-          <div class="w-5 h-5 group-hover:scale-110 transition-transform" set:html={TridentSVG} />
+          <div
+            class="w-5 h-5 group-hover:scale-110 transition-transform"
+            set:html={TridentSVG}
+          >
+          </div>
           Evocar o Oráculo
         </a>
         <p
@@ -101,7 +112,7 @@ const TridentSVG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
 
   {/* Divisor Místico */}
   <div class="w-full flex justify-center bg-black py-4 border-y border-white/5">
-    <div class="w-8 h-8 text-sangue/30" set:html={PentagramSVG} />
+    <div class="w-8 h-8 text-sangue/30" set:html={PentagramSVG}></div>
   </div>
 
   {/* Sobre as Consultas */}
@@ -114,13 +125,14 @@ const TridentSVG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
           As Lâminas e o Propósito
         </h2>
         <p class="text-offwhite/50 max-w-2xl mx-auto text-lg font-light">
-          O Tarot não é um jogo de sorte, é leitura de destino. Escolha sua tiragem com intenção e firmeza.
+          O Tarot não é um jogo de sorte, é leitura de destino. Escolha sua
+          tiragem com intenção e firmeza.
         </p>
         <div
           class="flex justify-center gap-6 text-xs uppercase tracking-widest text-offwhite/40 pt-4"
         >
           <div class="flex items-center gap-2">
-            <MapPin size={14} class="text-sangue" /> Presencial (SP)
+            <MapPin size={14} class="text-sangue" /> Presencial
           </div>
           <div class="flex items-center gap-2">
             <Eye size={14} class="text-sangue" /> Online (Vídeo)
@@ -133,7 +145,11 @@ const TridentSVG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
         <div
           class="bg-black border border-white/5 p-8 hover:border-sangue/50 transition-colors group relative overflow-hidden"
         >
-          <div class="absolute -bottom-10 -right-10 w-40 h-40 text-white/[0.02] group-hover:text-sangue/[0.05] transition-colors pointer-events-none" set:html={PentagramSVG} />
+          <div
+            class="absolute -bottom-10 -right-10 w-40 h-40 text-white/[0.02] group-hover:text-sangue/[0.05] transition-colors pointer-events-none"
+            set:html={PentagramSVG}
+          >
+          </div>
           <div
             class="mb-6 text-offwhite/20 group-hover:text-sangue transition-colors"
           >
@@ -145,7 +161,8 @@ const TridentSVG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
             Fogo Cruzado (Objetiva)
           </h3>
           <p class="text-offwhite/50 font-light leading-relaxed mb-6 text-sm">
-            Perguntas diretas, respostas claras. Ideal para resolver dúvidas urgentes e desatar nós de situações imediatas. Sem enrolação.
+            Perguntas diretas, respostas claras. Ideal para resolver dúvidas
+            urgentes e desatar nós de situações imediatas. Sem enrolação.
           </p>
           <ul
             class="text-xs uppercase tracking-widest text-offwhite/40 space-y-3"
@@ -163,7 +180,11 @@ const TridentSVG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
         <div
           class="bg-[#0a0a0a] border border-sangue/30 relative p-8 hover:border-sangue transition-colors group shadow-lg shadow-sangue/5 overflow-hidden"
         >
-          <div class="absolute -bottom-10 -right-10 w-40 h-40 text-white/[0.02] group-hover:text-sangue/[0.05] transition-colors pointer-events-none" set:html={PentagramSVG} />
+          <div
+            class="absolute -bottom-10 -right-10 w-40 h-40 text-white/[0.02] group-hover:text-sangue/[0.05] transition-colors pointer-events-none"
+            set:html={PentagramSVG}
+          >
+          </div>
           <div
             class="mb-6 text-sangue transition-transform group-hover:scale-110"
           >
@@ -175,7 +196,8 @@ const TridentSVG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
             Mesa Real (Panorama)
           </h3>
           <p class="text-offwhite/50 font-light leading-relaxed mb-6 text-sm">
-            Varredura completa. Identifica influências espirituais, demandas feiticeiras, bloqueios materiais e os caminhos abertos.
+            Varredura completa. Identifica influências espirituais, demandas
+            feiticeiras, bloqueios materiais e os caminhos abertos.
           </p>
           <ul
             class="text-xs uppercase tracking-widest text-offwhite/40 space-y-3"
@@ -193,7 +215,11 @@ const TridentSVG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
         <div
           class="bg-black border border-white/5 p-8 hover:border-sangue/50 transition-colors group relative overflow-hidden"
         >
-          <div class="absolute -bottom-10 -right-10 w-40 h-40 text-white/[0.02] group-hover:text-sangue/[0.05] transition-colors pointer-events-none" set:html={PentagramSVG} />
+          <div
+            class="absolute -bottom-10 -right-10 w-40 h-40 text-white/[0.02] group-hover:text-sangue/[0.05] transition-colors pointer-events-none"
+            set:html={PentagramSVG}
+          >
+          </div>
           <div
             class="mb-6 text-offwhite/20 group-hover:text-sangue transition-colors"
           >
@@ -205,7 +231,8 @@ const TridentSVG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
             Encruzilhada (Relações)
           </h3>
           <p class="text-offwhite/50 font-light leading-relaxed mb-6 text-sm">
-            A verdade nua e crua sobre conexões. Intenções ocultas, afinidades reais e o que esperar do futuro de qualquer vínculo.
+            A verdade nua e crua sobre conexões. Intenções ocultas, afinidades
+            reais e o que esperar do futuro de qualquer vínculo.
           </p>
           <ul
             class="text-xs uppercase tracking-widest text-offwhite/40 space-y-3"
@@ -307,14 +334,14 @@ const TridentSVG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
 
   {/* Divisor Místico 2 */}
   <div class="w-full flex justify-center bg-black py-4 border-y border-white/5">
-    <div class="w-6 h-6 text-sangue/30" set:html={TridentSVG} />
+    <div class="w-6 h-6 text-sangue/30" set:html={TridentSVG}></div>
   </div>
 
   {/* Ética e Fundamento */}
   <section class="py-20 px-6 bg-[#050505]">
     <div class="max-w-3xl mx-auto text-center space-y-6">
       <div class="flex justify-center mb-6">
-        <div class="w-12 h-12 text-sangue/40" set:html={TridentSVG} />
+        <div class="w-12 h-12 text-sangue/40" set:html={TridentSVG}></div>
       </div>
       <h2
         class="font-serif text-2xl md:text-3xl font-bold uppercase tracking-wider text-offwhite"
@@ -324,7 +351,9 @@ const TridentSVG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
       <p
         class="text-offwhite/50 font-light leading-relaxed text-sm md:text-base"
       >
-        O oráculo escancara a verdade, mas o passo a ser dado é apenas seu. Meu trabalho é calcado na firmeza da Quimbanda: ética, disciplina implacável e sigilo absoluto perante os Guardiões. Aqui não há ilusão.
+        O oráculo escancara a verdade, mas o passo a ser dado é apenas seu. Meu
+        trabalho é calcado na firmeza da Quimbanda: ética, disciplina implacável
+        e sigilo absoluto perante os Guardiões. Aqui não há ilusão.
       </p>
       <div
         class="inline-flex items-start gap-3 border border-sangue/30 bg-sangue/5 p-4 mt-6 text-left"
@@ -333,7 +362,9 @@ const TridentSVG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
         <p
           class="text-xs text-offwhite/40 font-light uppercase tracking-widest leading-relaxed"
         >
-          Aviso: O Tarot não substitui tratamento médico ou psicológico. Promessas vazias de feitiçaria não têm espaço aqui. Você é dono do seu livre-arbítrio e de suas consequências.
+          Aviso: O Tarot não substitui tratamento médico ou psicológico.
+          Promessas vazias de feitiçaria não têm espaço aqui. Você é dono do seu
+          livre-arbítrio e de suas consequências.
         </p>
       </div>
     </div>
@@ -345,9 +376,9 @@ const TridentSVG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
       <div
         class="text-xl font-serif font-bold text-sangue flex items-center gap-3 uppercase tracking-[0.3em]"
       >
-        <div class="w-4 h-4 opacity-70" set:html={TridentSVG} />
+        <div class="w-4 h-4 opacity-70" set:html={TridentSVG}></div>
         Oráculo Morcego
-        <div class="w-4 h-4 opacity-70" set:html={TridentSVG} />
+        <div class="w-4 h-4 opacity-70" set:html={TridentSVG}></div>
       </div>
       <div class="flex gap-6 mt-2 text-xs font-bold uppercase tracking-widest">
         <a
@@ -362,7 +393,9 @@ const TridentSVG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
       <p class="text-[10px] uppercase tracking-[0.2em] text-offwhite/20">
         &copy; {new Date().getFullYear()} Oráculo Morcego. Laroyê Exu.
       </p>
-      <p class="text-[8px] text-offwhite/5 opacity-30 select-none cursor-default font-light mt-[-10px]">
+      <p
+        class="text-[8px] text-offwhite/5 opacity-30 select-none cursor-default font-light mt-[-10px]"
+      >
         Invocado Magicamente por Polvolox
       </p>
     </div>
@@ -376,6 +409,6 @@ const TridentSVG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
     class="fixed bottom-6 right-6 bg-sangue text-white p-4 rounded-sm shadow-[0_0_20px_rgba(138,3,3,0.4)] hover:bg-black hover:text-sangue border border-transparent hover:border-sangue transition-all z-50 group flex items-center justify-center"
     aria-label="Chamar no WhatsApp"
   >
-    <div class="w-6 h-6" set:html={TridentSVG} />
+    <div class="w-6 h-6" set:html={TridentSVG}></div>
   </a>
 </Layout>
