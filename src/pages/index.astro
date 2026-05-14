@@ -6,13 +6,12 @@ import {
   Skull,
   Clock,
   MapPin,
-  CreditCard,
   Wallet,
   ShieldAlert,
   ChevronRight,
 } from "lucide-react";
 
-const WA_NUMBER = "5511999999999"; // Substitua pelo número real
+const WA_NUMBER = "555493625176";
 const WA_MESSAGE = "Laroyê! Tenho interesse em agendar uma leitura de Tarot.";
 const WA_URL = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(WA_MESSAGE)}`;
 
@@ -21,7 +20,7 @@ const PentagramSVG = `<svg viewBox="0 0 100 100" fill="none" stroke="currentColo
 const TridentSVG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M5 6v6a1 1 0 0 0 1 1h5"/><path d="M12 22V3"/><path d="M12 3l-2 3"/><path d="M12 3l2 3"/><path d="M19 6v6a1 1 0 0 1-1 1h-5"/></svg>`;
 ---
 
-<Layout title="Tarólogo Espiritual | Quimbanda e Fundamento">
+<Layout title="Oráculo Morcego | Quimbanda e Fundamento">
   {/* Header Flutuante */}
   <header
     class="absolute top-0 w-full p-6 flex justify-between items-center z-50"
@@ -30,7 +29,7 @@ const TridentSVG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
       class="text-sangue flex items-center gap-3 font-serif text-2xl font-bold tracking-widest uppercase drop-shadow-md"
     >
       <div class="w-5 h-5 opacity-80" set:html={TridentSVG} />
-      Oráculo
+      Oráculo Morcego
     </div>
     <a
       href={WA_URL}
@@ -296,7 +295,7 @@ const TridentSVG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
           class="p-6 bg-[#0a0a0a] border-t border-white/5 flex flex-col md:flex-row justify-center gap-8 text-xs font-bold uppercase tracking-widest text-offwhite/30"
         >
           <div class="flex items-center justify-center gap-2">
-            <CreditCard size={16} class="text-sangue/50" /> Cartão / Link
+            <Wallet size={16} class="text-sangue/50" /> Dinheiro
           </div>
           <div class="flex items-center justify-center gap-2">
             <Wallet size={16} class="text-sangue/50" /> Pix Instantâneo
@@ -347,15 +346,10 @@ const TridentSVG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
         class="text-xl font-serif font-bold text-sangue flex items-center gap-3 uppercase tracking-[0.3em]"
       >
         <div class="w-4 h-4 opacity-70" set:html={TridentSVG} />
-        Oráculo
+        Oráculo Morcego
         <div class="w-4 h-4 opacity-70" set:html={TridentSVG} />
       </div>
       <div class="flex gap-6 mt-2 text-xs font-bold uppercase tracking-widest">
-        <a
-          href="#"
-          class="text-offwhite/30 hover:text-sangue transition-colors"
-          >Instagram</a
-        >
         <a
           href={WA_URL}
           target="_blank"
@@ -366,7 +360,10 @@ const TridentSVG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
       </div>
       <div class="w-12 h-px bg-white/10 my-4"></div>
       <p class="text-[10px] uppercase tracking-[0.2em] text-offwhite/20">
-        &copy; {new Date().getFullYear()} Oráculo Quimbanda. Laroyê Exu.
+        &copy; {new Date().getFullYear()} Oráculo Morcego. Laroyê Exu.
+      </p>
+      <p class="text-[8px] text-offwhite/5 opacity-30 select-none cursor-default font-light mt-[-10px]">
+        Invocado Magicamente por Polvolox
       </p>
     </div>
   </footer>
